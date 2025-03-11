@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Garments - Official Website</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap');
+  .carousel-inner img {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%); 
+    width: 100%;
+    margin: auto;
+    
+  
+  }
+  .carousel-inner > .item > img {
+    display: block;
+    max-width: 100%;
+    height: 700px; }
+
+
+  .carousel-caption h3,p{
+    color: #fff !important;
+  }
+  
+  .carousel-inner{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+   
+
+  }
+   
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(to bottom, #001f4d, #0066cc);
+            color: #f0f0f0;
+            scroll-behavior: smooth;
+        }
+
+       header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid #004080;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+          
+            
+            flex:1;
+                display:flex;
+                justify-content: flex-start;
+        }
+        
+
+        .navbar-brand img {
+            width: 40px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #cce6ff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #66b3ff;
+        }
+
+       
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+      
+        @media (max-width: 768px) {
+            nav {
+                display: none; 
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 80px;
+                right: 0px;
+                width: 200px;
+                text-align: center;
+                padding: 10px;
+               border-radius: 0px 0px 15px 15px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .menu-toggle {
+                display: block;
+
+            }
+
+           
+            nav.active {
+                display: flex;
+            }
+            .carousel-inner > .item > img {
+    display: block;
+    max-width: 100%;
+    height: 300px; }
+            
+
+        }
+
+        
+
+        .btn {
+            padding: 12px 24px;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #004080;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: rgba(0, 0, 51, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #cce6ff;
+        }
+        .section h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #cce6ff;
+        }
+        .section h3 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #cce6ff;
+        }.styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; 
+    text-align: left; 
+    max-width: 800px; 
+    color: #ffffff;
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+.styled-list li {
+    line-height: 1.7; 
+    margin-bottom: 10px;
+    padding-left:50px;: 
+}
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.7;
+            text-align: center;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+
+      .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center; 
+}
+
+.product {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #004080;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; /* Adjust width */
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.product img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #004080;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.view-more {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #002D5A;
+}
+
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #66b3ff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0066cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+            color: #cce6ff;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #66b3ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+        .grid-container {
+            display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+          
+            
+
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+      
+        
+
+        .grid-item {
+    background: white;
+    padding: 0; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider img {
+    width: 100%;  
+    height: 100%;
+    
+    object-fit: contain; 
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+.grid-item:hover {
+            transform: translateY(-5px);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+        .navbar-brand{
+            margin-top:-25px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <header>
+      <a class="navbar-brand" href="#home">
+        <img src="logo.png" alt="Logo">
+    </a>
+    <div class="logo">ARK Garments</div>
+    
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav-menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#ourproducts">Our Products</a>
+        <a href="#gallery">Collections</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    </header>
+
+    
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+   
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="https://media.istockphoto.com/id/1224153292/photo/interior-of-garment-factory-tailoring-industry-fashion-designer-workshop-industry-concept.jpg?s=612x612&w=0&k=20&c=jIwTdrfFeXIfFIrwTiFqPe9jogM0UyPTTfVYbN_WHWM=" alt="New York" >
+        <div class="carousel-caption">
+          <h3>ARK</h3>
+          <p>We specialize Garment Manufactring</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="https://media.istockphoto.com/id/149426742/photo/industrial-embroidery-machine.jpg?s=612x612&w=0&k=20&c=bkef_UT1v9DJ1lg1Yl5hjR31Y1DKCtx8HOF-g0LHN1c=" alt="Chicago" >
+        <div class="carousel-caption">
+          <h3>ARK</h3>
+          <p>We specialize Garment Manufactring</p>
+        </div>      
+      </div>
+
+    
+      <div class="item">
+        <img src="https://media.istockphoto.com/id/585525382/photo/embroidery-machine-at-a-clothing-factory.jpg?s=612x612&w=0&k=20&c=O2DiaPUPznBOYIf0HwvpmfcF6L2W4DTv5SmVms4CrdA=" alt="Los Angeles" >
+        <div class="carousel-caption">
+           <h3>ARK</h3>
+          <p>We specialize Garment Manufactring</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+       
+    
+
+   <section class="section" id="ourproducts">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="product">
+            <a href="hoodie.html">
+                <img src="https://m.media-amazon.com/images/I/41btikh9TBL.jpg" alt="Hoodies">
+            </a>
+            <h3>Hoodies</h3>
+            <p>Comfortable and stylish hoodies for every season.</p>
+            <a href="hoodie.html" class="view-more">more Details</a>
+        </div>
+
+        <div class="product">
+            <a href="track.html">
+                <img src="https://m.media-amazon.com/images/I/61zzAPka4-L._SY550_.jpg" alt="Track Pant">
+            </a>
+            <h3>Track Pants</h3>
+            <p>Perfect fit and comfort for workouts & casual wear.</p>
+            <a href="track.html" class="view-more">more Details</a>
+        </div>
+
+        <div class="product">
+            <a href="safetyjacket.html">
+                <img src="https://m.media-amazon.com/images/I/71-TVSEzyNL._SY550_.jpg" alt="Blue T-shirt">
+            </a>
+            <h3>Safety Jacket</h3>
+<p>High-visibility reflective jacket for safety and protection.</p> <a href="safteyjacket.html" class="view-more">more Details</a>
+        </div>
+    </div>
+</section>
+
+
+    <section class="section" id="gallery">
+        <h2>collections</h2>
+       <div class="grid-container">
+        <div class="grid-item">
+            <div class="slider">
+                <img src="https://m.media-amazon.com/images/I/71626D7ejML._SY741_.jpg" class="slide" alt="Slide 1">
+                <img src="https://m.media-amazon.com/images/I/61T5BSXO8tL._SY741_.jpg" class="slide" alt="Slide 2">
+                <img src="https://m.media-amazon.com/images/I/61057BoARXL._SY741_.jpg" class="slide" alt="Slide 3">
+                <img src="https://m.media-amazon.com/images/I/615JNSopKXL._SY741_.jpg" class="slide" alt="Slide 4">
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="slider">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/353182473/NI/VX/LI/1044551/men-cricket-t20-t-shirts-jersey-500x500.jpg" class="slide" alt="Slide 1">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/353186506/QE/JI/JZ/1044551/cricket-jersey-t-shirt-500x500.jpg" class="slide" alt="Slide 2">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/353223560/HW/MC/IE/1044551/dry-fit-t-shirts-1000x1000.jpg" class="slide" alt="Slide 3">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/10/353194802/ZF/LO/MW/1044551/men-football-t-shirt-500x500.jpg" class="slide" alt="Slide 4">
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="slider">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/124c38eALOR-MS39_1.jpg?rnd=20200526195200&tr=w-720" class="slide" alt="Slide 1">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240812/hg0S/66ba1e4d6f60443f31015365/-473Wx593H-442600230-black-MODEL5.jpg" class="slide" alt="Slide 2">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/3/c/3ca3d42EYTF-MK5_1.jpg?rnd=20200526195200&tr=w-256" class="slide" alt="Slide 3">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/124c38eALOR-MS41_1.jpg?rnd=20200526195200&tr=w-256" class="slide" alt="Slide 4">
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="slider">
+                <img src="https://m.media-amazon.com/images/I/51OxGhg59XL._SX679_.jpg" class="slide" alt="Slide 1">
+                <img src="https://m.media-amazon.com/images/I/41R0iHsQzzL._SX342_SY445_QL70_FMwebp_.jpg" class="slide" alt="Slide 2">
+                <img src="https://m.media-amazon.com/images/I/61PsTIbkBPL._SX522_.jpg" class="slide" alt="Slide 3">
+                <img src="https://m.media-amazon.com/images/I/41lp75RKKAL._SX522_.jpg" class="slide" alt="Slide 4">
+                
+            </div>
+        </div>
+          <div class="grid-item">
+            <div class="slider">
+                <img src="https://m.media-amazon.com/images/I/31xx0K6SpCL.jpg" class="slide" alt="Slide 1">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/0/103e75cALOR-MF9_1.jpg?rnd=20200526195200&tr=w-256" class="slide" alt="Slide 2">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/4/8491a21ASKR-MF1_1.jpg?rnd=20200526195200&tr=w-720" class="slide" alt="Slide 3">
+                <img src="https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/2/124c38eALOR-MF25_1.jpg?rnd=20200526195200&tr=w-720" class="slide" alt="Slide 4">
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="slider">
+                <img src="https://m.media-amazon.com/images/I/51A-wKJS3OL._SX679_.jpg" class="slide" alt="Slide 1">
+                <img src="https://m.media-amazon.com/images/I/51fwGG92+EL._SX679_.jpg" class="slide" alt="Slide 2">
+                <img src="https://m.media-amazon.com/images/I/717QXcmcw+L._SY879_.jpg" class="slide" alt="Slide 3">
+                <img src="https://m.media-amazon.com/images/I/71+x2FRTmWL._SY741_.jpg" class="slide" alt="Slide 4">
+                
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+    <section class="section" id="about">
+    <div id="band" class="container text-center">
+        <h1>About Us – ARK Garment Manufacturing Industries Ltd.</h1>
+        <p>With <strong>30 years of expertise</strong>, ARK Garment Manufacturing Industries Ltd. has evolved from a small factory in <strong>Sharjah, UAE</strong> into a global apparel manufacturer with operations in <strong>Jordan, Kenya, Egypt, and Oman</strong>.</p>
+
+        <h2>Our Vision & Mission</h2>
+        <p><strong>Vision:</strong> To be the leading provider of apparel manufacturing solutions.</p>
+        <p><strong>Mission:</strong> To produce a diverse range of garments with innovative designs, exceptional quality, and cost-effectiveness.</p>
+
+        <h2>Our Values</h2>
+        <ul class="styled-list">
+            <li>✔ Commitment to <strong>on-time delivery, quality, and sustainability</strong>.</li>
+            <li>✔ High efficiency and <strong>operational excellence</strong>.</li>
+            <li>✔ Rigorous adherence to <strong>social and technical compliance</strong>.</li>
+        </ul>
+
+        <h2>Our Responsibility</h2>
+        <p>We prioritize sustainability and responsible manufacturing with initiatives such as:</p>
+        <ul class="styled-list">
+            <li>♻ <strong>Energy-efficient production</strong> to reduce environmental impact.</li>
+            <li>♻ <strong>Sustainable sourcing</strong> of materials.</li>
+            <li>♻ <strong>Waste management and recycling</strong> programs.</li>
+        </ul>
+
+        <h2>Our Milestones</h2>
+        <ul class="styled-list">
+            <li>📌 <strong>2018:</strong> Shifted operations to Jordan.</li>
+            <li>📌 <strong>2016:</strong> Opened a factory in Salalah, Oman.</li>
+            <li>📌 <strong>2011:</strong> Established a facility in Barka, Oman.</li>
+            <li>📌 <strong>2009:</strong> Launched a factory in Port Said, Egypt.</li>
+            <li>📌 <strong>2004:</strong> Expanded the Sharjah factory with 200 machines and in-house washing.</li>
+            <li>📌 <strong>2002:</strong> Entered the Kenyan market.</li>
+            <li>📌 <strong>1994:</strong> Founded as a small manufacturing unit in Sharjah, UAE.</li>
+        </ul>
+
+        <h2>Get in Touch</h2>
+        <p><strong>Visit Us:</strong> <a href="https://www.arkgarments.com" target="_blank">www.arkgarments.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@arkgarments.com">info@arkgarments.com</a></p>
+        <p><strong>Call:</strong> +962 79801 1383</p>
+    </div>
+</section>
+
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ARK Garments Manufacturing Industries Co. Ltd. All rights reserved.</p>
+       
+    </footer>
+    <script>
+         function toggleMenu() {
+        var menu = document.getElementById("nav-menu");
+        menu.classList.toggle("active");
+    }
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slider .slide");
+        const totalSlides = slides.length /6 ; 
+
+        function changeSlide() {
+            document.querySelectorAll(".slider").forEach((slider) => {
+                let images = slider.querySelectorAll(".slide");
+                images.forEach((img, index) => {
+                    img.style.opacity = index === currentIndex ? "1" : "0";
+                });
+            });
+
+            currentIndex = (currentIndex + 1) % totalSlides;
+        }
+
+        setInterval(changeSlide, 3000); 
+    </script>
+
+</body>
+
+</html>

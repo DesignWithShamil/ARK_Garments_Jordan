@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-in-1 Hunting Jacket</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #000539; /* Dark Navy Blue */
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #00142F; /* Deep Blue */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.main-image {
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.thumbnail:hover {
+    border: 2px solid #cce6ff; /* Gold Accent */
+}
+
+.about-section, .details-section {
+    max-width: 700px;
+    text-align: left;
+    background: #001531; /* Very Dark Blue */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+h2 {
+    color:#cce6ff; /* Gold Accent */
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+button {
+    background-color: #0066cc; /* Gold Accent */
+    color: #000539;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #cce6ff; /* Orange Accent */
+}
+
+/* Size Chart Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 5, 56, 0.8); /* Dark Navy Overlay */
+}
+
+.modal-content {
+    background-color: #00132D; /* Near Black Blue */
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: left;
+    position: relative;
+    color: white;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #FFD700;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .main-image {
+        width: 100%;
+    }
+    .modal-content {
+        width: 80%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="product-container">
+        <img id="mainProductImage" src="https://m.media-amazon.com/images/I/71UuC1y42rL._SY550_.jpg" class="main-image">
+        
+        <div class="thumbnail-container">
+            <img src="https://m.media-amazon.com/images/I/71UuC1y42rL._SY550_.jpg" class="thumbnail" onclick="changeImage(this.src)">
+            <img src="https://m.media-amazon.com/images/I/71vlHpi3aXL._SY550_.jpg" class="thumbnail" onclick="changeImage(this.src)">
+            <img src="https://m.media-amazon.com/images/I/71-TVSEzyNL._SY550_.jpg" class="thumbnail" onclick="changeImage(this.src)">
+            <img src="https://m.media-amazon.com/images/I/61mnF08ESWS._SX522_.jpg" class="thumbnail" onclick="changeImage(this.src)">
+        </div>
+    </div>
+
+    <div class="details-section">
+        <h2>Product Details</h2>
+        <p><strong>Material composition:</strong> 100% Polyester</p>
+        <p><strong>Neck style:</strong>V-Neck</p>
+        <p><strong>Closure type:</strong>Zipper</p>
+        <p><strong>Collar style:</strong>Band</p>
+    </div>
+
+    <div class="about-section">
+        <h2>About this item</h2>
+        <ul>
+            <li>Made from 3 M Micro Prismatic Tape for High Visibility in Dark.</li>
+            <li>Micro Prismatic Tape Piping For High Visibility in Dark.</li>
+            <li>Can be customized according to customers need. If logo required, can be provided (extra charges will be accordingly).</li>
+            <li>Made of Premium Material - Comfortable, breathable, light weight fabric, wear resistant and durable.</li>
+            <li>Application: suitable for traffic guidance, construction site, road safety, industrial safety, running, cycling, bike racing etc..</li>
+        </ul>
+        <button onclick="openModal()">View Size Chart</button>
+    </div>
+
+    <!-- Go Back Button -->
+    <button onclick="window.location.href='index.html'" style="
+        background-color: #cce6ff; 
+        color: #000539; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-weight: bold;
+        margin-top: 20px;
+        transition: background 0.3s;">
+        Go Back
+    </button>
+
+    <!-- Size Chart Modal -->
+   <div id="sizeChartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>EHG Elite Size Chart</h2>
+        <h3>Safety Jacket</h3>
+        <table border="1" width="100%" cellpadding="5">
+            <tr>
+                <th>Brand Size</th>
+                <th>US Size</th>
+                <th>Chest (in)</th>
+                <th>Waist (in)</th>
+                <th>Sleeve Length (in)</th>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>S</td>
+                <td>36-38</td>
+                <td>30-32</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>M</td>
+                <td>39-41</td>
+                <td>33-35</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td>L</td>
+                <td>42-44</td>
+                <td>36-38</td>
+                <td>34</td>
+            </tr>
+            <tr>
+                <td>XL</td>
+                <td>XL</td>
+                <td>45-47</td>
+                <td>39-41</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>2XL</td>
+                <td>2XL</td>
+                <td>48-50</td>
+                <td>42-44</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <td>3XL</td>
+                <td>3XL</td>
+                <td>51-53</td>
+                <td>45-47</td>
+                <td>37</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    <script>
+        function changeImage(imageSrc) {
+            document.getElementById("mainProductImage").src = imageSrc;
+        }
+
+        function openModal() {
+            document.getElementById("sizeChartModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("sizeChartModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
